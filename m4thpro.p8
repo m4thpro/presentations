@@ -13,22 +13,12 @@ function _init()
    colors={0,1,3,5,2,13,4,6,12,11,14,15,9,10,8,7}
 end
 
-
-function cprint(s,x,y,c) 
-	function hoffset(s)
-		if #s==1 then return #s 
-		else return 2*#s 
-		end
-	end
-	print(s,x-hoffset(s),y,c)
-end
-
 -->8
 -- main draws and update
 
 function _update()
-   if btnp(5) then state=max(state+1,2) end
-   if btnp(4) then state=min(state-1,1) end
+   if btnp(5) then state=min(state+1,14) t=0 end
+   if btnp(4) then state=max(state-1,1) t=0 end
 end	
 
 function _draw()
@@ -36,6 +26,30 @@ function _draw()
       draw_1()
    elseif state==2 then
       draw_2()
+   elseif state==3 then
+      draw_3()
+   elseif state==4 then
+      draw_4()
+   elseif state==5 then
+      draw_5()
+   elseif state==6 then
+      draw_6()
+   elseif state==7 then
+      draw_7()
+   elseif state==8 then
+      draw_8()
+   elseif state==9 then
+      draw_9()
+   elseif state==10 then
+      draw_10()
+   elseif state==11 then
+      draw_11()
+   elseif state==12 then
+      draw_12()
+   elseif state==13 then
+      draw_13()
+   elseif state==14 then
+      draw_14()
    end
 end
 
@@ -52,22 +66,117 @@ end
 function draw_1()
    t =t+1
    cls()
-   cprint("m th.pro          ",63,63,7)
+   print("m th.pro",10,63,7)
    flicker=ceil(rnd(5))
    if flicker%5==0 then
-      cprint("a",32,63,7) -- x-value -7
+      print("a",14,63,7) -- x-value -7
    else
-      cprint("4",32,63,7)
+      print("4",14,63,7)
    end
-   print("(gramming)",59,63,colors[colorwarming(t)])
+   print("(gramming)",42,63,colors[colorwarming(t)])
    if t==768 then t=-1 end
 end
 
 
 function draw_2()
    cls()
-   cprint("math is not a spectator sport",63,63,7)
+   print("math is not a spectator sport",10,63,7)
 end
+
+
+function draw_3()
+   t =t+1
+   cls()
+   print("math is not a spectator sport",10,63,7)
+   if t<28
+   then line(40,65,40+t/2,65,8)
+   elseif t<60
+   then
+      print("math is     a spectator sport",10,63,7)
+      print("        not                  ",10,63,8)
+   elseif t<90
+   then
+      cls()
+      print("math is     a spectator sport",10,63,7)
+   elseif t<122
+   then
+      cls()
+      print("math is",10,63,7)
+      print("a spectator sport",58-(t-90)/2,63,7)
+   elseif t>=122
+   then
+      cls()
+      t=123
+      print("math is a spectator sport",10,63,7)
+   end  
+end
+
+function draw_4()
+   cls()
+   print("why?",10,63,7)
+end
+
+function draw_5()
+   cls()
+   print("struggle",10,63,7)
+end
+
+
+function draw_6()
+   cls()
+   print("normalize failure",10,63,7)
+end
+
+
+function draw_7()
+   cls()
+   print("own path",10,63,7)
+end
+
+
+function draw_8()
+   cls()
+   print("it's a journey",10,63,7)
+end
+
+function draw_9()
+   cls()
+   print("pico8",10,63,7)
+end
+
+
+function draw_10()
+   cls()
+   print("lots of games",10,63,7)
+end
+
+
+
+function draw_11()
+   cls()
+   print("share them with friends",10,63,7)
+end
+
+function draw_12()
+   cls()
+   print("share them with enemies",10,63,7)
+end
+
+
+function draw_13()
+   cls()
+   print("enemies become friends",10,63,7)
+end
+
+
+
+function draw_14()
+   cls()
+   print("the end",10,63,7)
+end
+
+
+
 
 
 
