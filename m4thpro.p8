@@ -8,9 +8,9 @@ __lua__
 
 
 function _init()
-   state="1"
+   state=1
    t=0
-   colors={0,1,5,3,2,13,4,8,6,12,11,14,15,9,10,7}
+   colors={0,1,3,5,2,13,4,6,12,11,14,15,9,10,8,7}
 end
 
 
@@ -22,7 +22,6 @@ function cprint(s,x,y,c)
 	end
 	print(s,x-hoffset(s),y,c)
 end
-
 
 -->8
 -- main draws and update
