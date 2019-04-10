@@ -7,30 +7,71 @@ __lua__
 -- jim fowler
 
 
-function cprint(s,x,y) 
+function _init()
+   state="1"
+   t=0
+   colors={0,1,5,3,2,13,4,8,6,12,11,14,15,9,10,7}
+end
+
+
+function cprint(s,x,y,c) 
 	function hoffset(s)
 		if #s==1 then return #s 
 		else return 2*#s 
 		end
 	end
-	print(s,x-hoffset(s),y)
+	print(s,x-hoffset(s),y,c)
 end
 
 
 -->8
--- draws
+-- main draws and update
+
+function _update()
+   if btnp(5) then state=max(state+1,2) end
+   if btnp(4) then state=min(state-1,1) end
+end	
 
 function _draw()
-   cls()
-   cprint("m th.pro          ",63,63)
-   flicker=ceil(rnd(3))
-   if flicker%3==0 then
-      cprint("a",32,63) -- x-value -7
-   else
-      cprint("4",32,63)
+   if state==1 then
+      draw_1()
+   elseif state==2 then
+      draw_2()
    end
-   print("(gramminng)",59,63)
 end
+
+
+
+-- draws
+
+
+function colorwarming(t)
+   return ceil(t/48)
+end
+
+
+function draw_1()
+   t =t+1
+   cls()
+   cprint("m th.pro          ",63,63,7)
+   flicker=ceil(rnd(5))
+   if flicker%5==0 then
+      cprint("a",32,63,7) -- x-value -7
+   else
+      cprint("4",32,63,7)
+   end
+   print("(gramming)",59,63,colors[colorwarming(t)])
+   if t==768 then t=-1 end
+end
+
+
+function draw_2()
+   cls()
+   cprint("math is not a spectator sport",63,63,7)
+end
+
+
+
 __map__
 000102030405060708090a0b0c0d0e0f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 101112131415161718191a1b1c1d1e1f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000

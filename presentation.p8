@@ -12,7 +12,7 @@ p.remap = true
 -----------------------------
 -- decompression
 -----------------------------
-
+]
 function remap(i,w,h)
  local sx=flr((i/64)%(w/8))
  local sy=flr((i/64)/(w/8))
