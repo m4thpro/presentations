@@ -23,8 +23,24 @@ end
 -- main draws and update
 
 function _update()
-   if btnp(5) then state=min(state+1,14) t=0 end
-   if btnp(4) then state=max(state-1,1) t=0 end
+   if btnp(5) then state=min(state+1,14)
+      t=0
+      ox=10
+      oy=63
+      wx=14
+      wy=63
+      nx=18
+      ny=63
+   end
+   if btnp(4) then state=max(state-1,1)
+      t=0
+      ox=10
+      oy=63
+      wx=14
+      wy=63
+      nx=18
+      ny=63
+   end
 end	
 
 function _draw()
@@ -207,6 +223,8 @@ end
 function draw_11()
    cls()
    print("share them with enemies",10,63,7)
+   spr((t%2)*2+64,-50+t,90,2,2)
+   t=(t+1)%180
 end
 
 
