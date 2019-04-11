@@ -186,8 +186,13 @@ end
 
 
 function draw_9()
-   cls()
-   print("lots of games",10,63,7)
+   if t<30 then
+      cls()
+      print("lots of games",10,63,7)
+   else
+      print("lots of games",rnd(128),rnd(128),ceil(rnd(15)))
+   end
+   t=min(200,t+1)
 end
 
 
@@ -195,6 +200,8 @@ end
 function draw_10()
    cls()
    print("share them with friends",10,63,7)
+   spr((t%2+1)*4,150-t,90,4,4)
+   t=(t+1)%180
 end
 
 function draw_11()
