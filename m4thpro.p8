@@ -121,22 +121,33 @@ function draw_4()
   col = 7+j
   t1 = t + i*4 - j*2
   x = 10--cos(t0)*5
-  y = 58 + j + cos(t1/50)*5
+  y = 58 + j + sin(t1/50)*5
   pal(7,col)
   spr(i, 8+i*8 + x, y)
+  t%=50
   end
  end
 end
 
 function draw_5()
    cls()
-   print("struggle",10,63,7)
+   print("s",10,min(t-5,63),7)
+   print("t",14,min(t-15,63),7)
+   print("r",18,min(t-25,63),7)
+   print("u",22,min(t-35,63),7)
+   print("g",26,min(t-45,63),7)
+   print("g",30,min(t-55,63),7)
+   print("l",34,min(t-65,63),7)
+   print("e",38,min(t-75,63),7)
+   t=min(t+1,140)
 end
 
 
 function draw_6()
    cls()
-   print("normalize failure",10,63,7)
+   print("normal",10,63,7)
+   print("ize failure",max(t-60,34),63,7)
+   t=min(t+1,200)
 end
 
 
