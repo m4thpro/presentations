@@ -10,7 +10,7 @@ __lua__
 function _init()
    state=1
    t=0
-   colors={0,1,2,5,3,4,13,6,12,11,8,14,9,10,15,7}
+   colors={0,1,2,5,3,4,13,8,12,11,14,6,9,10,15,7}
    ox=10
    oy=63
    wx=14
@@ -190,7 +190,7 @@ function draw_9()
       cls()
       print("lots of games",10,63,7)
    else
-      print("lots of games",rnd(128),rnd(128),ceil(rnd(15)))
+      print("lots of games",rnd(148)-20,rnd(148)-20,ceil(rnd(15)))
    end
    t=min(200,t+1)
 end
